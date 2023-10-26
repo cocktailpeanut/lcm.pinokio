@@ -1,0 +1,16 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": { "message": "git clone https://github.com/cocktailpeanut/latent-consistency-model.git app" }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "venv": "venv",
+      "path": "app",
+      "message": [
+        "{{pip.install.torch}}",
+        "pip install -r requirements.txt"
+      ]
+    }
+  }]
+}

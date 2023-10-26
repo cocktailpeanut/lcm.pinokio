@@ -1,0 +1,25 @@
+{
+  "width": 512,
+  "height": 512,
+  "prompt": "a beautiful apple floating in outer space, like a planet",
+  "steps": 4,
+  "run": [{
+    "method": "input",
+    "params": {
+      "title": "Enter prompt",
+      "type": "notify",
+      "form": [{
+        "type": "text",
+        "key": "prompt",
+        "placeholder": "Enter a prompt (ex: a beautiful apple floating in outer space)"
+      }]
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "venv": "venv",
+      "path": "app",
+      "message": "python main.py \"{{input.prompt}}\" --steps {{self.steps}} --width {{self.width}} --height {{self.height}} --continuous"
+    }
+  }]
+}
